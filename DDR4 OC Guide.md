@@ -46,6 +46,7 @@
 You should always test with various stress tests to ensure your overclock is stable.
 ### Avoid
 * I wouldn't recommend the AIDA64 memory test and [Memtest64](https://forums.anandtech.com/threads/techpowerups-memtest-64-is-it-better-than-hci-memtest-for-determining-stability.2532209/) as they are both not very good at finding memory errors.
+* memtest86+ 4.20 (last open-source version of Passmark's Memtest86) is very old and does not detect DDR4 errors.
 ### Recommended
 * [TM5](https://mega.nz/file/vLhxBahB#WwJIpN3mQOaq_XsJUboSIcaMg3RlVBWvFnVspgJpcLY) with any of the configs listed:
   * [Extreme by anta777](TM5-Configs/extreme@anta777.cfg) (recommended). Make sure to load the config. It should say 'Customize: Extreme1 @anta777' if loaded.  
@@ -90,6 +91,7 @@ You should always test with various stress tests to ensure your overclock is sta
        Your target field should look like: `"path\to\prime95\prime95.exe" -t -WRAM`.
     5. You can now use the shortcut to start Prime95 with the settings provided.
 * [randomx-stress](https://github.com/00-matt/randomx-stress/releases) - Can be used to test FCLK stability.
+* [Passmark memtest86](https://www.memtest86.com/memtest86.html) - comprehensive stress-testing tool. Free version is very capable of detecting errors and has support for ECC-enabled memory controllers.
 ### Comparison
 [Comparison](https://imgur.com/a/jhrFGhg) between Karhu RAMTest, TM5 with the extreme config, and GSAT.
   * TM5 is the fastest and most stressful by quite a margin, though I have had instances where I would pass 30 mins of TM5 but fail within 10 mins of Karhu. Another user had a similar experience. YMMV.
@@ -112,7 +114,6 @@ You should always test with various stress tests to ensure your overclock is sta
 * [Intel MLC GUI](https://github.com/FarisR99/IMLCGui) - GUI for Intel Memory Latency Checker made by Faris.
 * [xmrig](https://github.com/xmrig/xmrig) is very memory sensitive, so it's helpful to test the effects of specific timings. First, run as admin with `--bench=1M` as a command-line argument to start the benchmark. Then, use the benchmark time to compare.
 * [MaxxMEM2](https://www.softpedia.com/get/System/Benchmarks/MaxxMEM2.shtml) - free alternative to AIDA64, but bandwidth tests seem to be a lot lower, so it isn't directly comparable to AIDA64.
-* [Super Pi Mod v1.5 XS](https://www.techpowerup.com/download/super-pi/) - another memory-sensitive benchmark, but I haven't used it as much as AIDA64. 1M - 8M digits should be enough for a quick benchmark. You only need to look at the last (total) time, where lower is better.
 * [HWBOT x265 Benchmark](https://hwbot.org/benchmark/hwbot_x265_benchmark_-_1080p/) - I've heard that this benchmark is also sensitive to memory, but I haven't really tested it myself.
 * [PYPrime 2.x](https://github.com/monabuntur/PYPrime-2.x) - This benchmark is quick and scales very well with CPU core clock, cache/FCLK, memory frequency, and timings
 
